@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sankalp Dabhade - Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional CSS for the Read More functionality */
+    .blog-content {
+      max-height: 100px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      position: relative;
+    }
+    
+    .blog-content.expanded {
+      max-height: none;
+    }
+    
+    .blog-content.fade-out:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    }
+    
+    .read-more-btn {
+      background: none;
+      border: none;
+      color: #4a90e2;
+      cursor: pointer;
+      padding: 5px 0;
+      font-weight: bold;
+    }
+    
+    .read-more-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Additional CSS for section title boxes */
+    h2 {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color:rgba(255, 229, 180, 0.1);
+      border: 2px solid  rgb(255, 229, 180);
+      border-radius: 10px;
+      transition: transform 0.5s ease,transform 0.5s ease;
+    }
+
+    h2:hover {
+      transform: scale(1.1);
+      background: rgba(255, 229, 180, 0.2);
+    }
+
+    /* Download Button Styles */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: rgba(255, 229, 180, 0.1);
+      border: 2px solid #FFE5B4;
+      border-radius: 10px;
+      color: #FFE5B4;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 229, 180, 0.2);
+    }
+
+    .download-btn:hover {
+      background: rgba(255, 229, 180, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(255, 229, 180, 0.4);
+    }
+
+    .download-btn:active {
+      transform: translateY(0);
+    }
+
+    .download-btn svg {
+      transition: transform 0.3s ease;
+    }
+
+    .download-btn:hover svg {
+      transform: translateY(3px);
+    }
+
+    /* New styles for values section */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 229, 180, 0.3);
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 229, 180, 0.1);
+    }
+
+    .value-card h3 {
+      color: #FFE5B4;
+      margin-bottom: 10px;
+    }
+
+    /* Accomplishments styles */
+    .accomplishments-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .accomplishments-list li {
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 15px;
+      padding: 15px;
+      border-left: 3px solid #FFE5B4;
+      transition: background 0.3s ease;
+    }
+
+    .accomplishments-list li:hover {
+      background: rgba(255, 229, 180, 0.1);
+    }
+
+    /* Education and Training styles */
+    .education-item {
+      margin-bottom: 25px;
+    }
+
+    .education-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .education-item .date {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    /* Personal Goals styles */
+    .goals-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .goal-category {
+      flex: 1;
+      min-width: 250px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .goal-category h3 {
+      color: #FFE5B4;
+      border-bottom: 1px solid rgba(255, 229, 180, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .goal-category ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#nav">Resume</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#accomplishments">Accomplishments</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="container">
+      <h1>Sankalp Dabhade</h1>
+      <p>Full Stack Developer | Tech Enthusiast</p>
+      <br>
+      <a href="resume.html" class="skill" target="_blank" id="nav">Resume</a>
+        
+       
+      </a>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="img_ani.img" alt="Sankalp Dabhade" class="anime-img">
+        <p>Hi, I'm <span class="neon">Sankalp Dabhade</span>, a first-year student pursuing Btech in Software Engineering at MIT-AOE. I'm passionate about Full Stack Development and love building web applications that solve real-world problems. I'm currently learning HTML, CSS, JavaScript, and exploring frameworks like React and Node.js. I've built a few small projects, like a personal portfolio website and a to-do list app, to practice my coding skills.</p>
+        <p>My goal is to become a skilled Full Stack Developer and contribute to innovative projects. I'm also eager to collaborate with others and learn from experienced professionals. When I'm not coding, you'll find me diving into the latest tech trends. I believe in the power of continuous learning and collaboration, and I'm excited to contribute to meaningful projects that make a difference. Let's build something amazing together! Feel free to reach out if you'd like to collaborate or just chat about tech!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Values Section -->
+  <section id="values">
+    <div class="container">
+      <h2>My Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Continuous Learning</h3>
+          <p>I believe in constantly expanding my knowledge and skills, staying curious about new technologies and approaches in the ever-evolving field of software development.</p>
+        </div>
+        <div class="value-card">
+          <h3>Integrity</h3>
+          <p>Honesty and ethical behavior guide all my professional interactions. I take responsibility for my work and maintain transparency in all my projects.</p>
+        </div>
+        <div class="value-card">
+          <h3>Collaboration</h3>
+          <p>Great things are built together. I value teamwork, open communication, and the exchange of ideas that leads to innovative solutions.</p>
+        </div>
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>I strive for excellence in everything I create, paying attention to details while maintaining clean, efficient, and maintainable code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Personal Goals Section -->
+  <section id="goals">
+    <div class="container">
+      <h2>Personal Goals</h2>
+      <div class="goals-container">
+        <div class="goal-category">
+          <h3>Short-term Goals (1 year)</h3>
+          <ul>
+            <li>Master React and Node.js frameworks</li>
+            <li>Build 5 substantial full-stack projects</li>
+            <li>Contribute to open-source projects</li>
+            <li>Complete 2 professional certifications</li>
+            <li>Develop a personal brand online</li>
+          </ul>
+        </div>
+        <div class="goal-category">
+          <h3>Medium-term Goals (2-3 years)</h3>
+          <ul>
+            <li>Secure an internship at a tech company</li>
+            <li>Learn mobile app development</li>
+            <li>Develop expertise in cloud technologies</li>
+            <li>Build a professional network in the industry</li>
+            <li>Create a technical blog with regular posts</li>
+          </ul>
+        </div>
+        <div class="goal-category">
+          <h3>Long-term Goals (5+ years)</h3>
+          <ul>
+            <li>Work as a senior full-stack developer</li>
+            <li>Mentor junior developers</li>
+            <li>Launch a SaaS product</li>
+            <li>Speak at a tech conference</li>
+            <li>Establish a tech scholarship program</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <a href="html.html" class="skill" target="_blank">HTML(view)</a>
+        <a href="css.html" class="skill" target="_blank">CSS(view)</a>
+        <a href="javascript.html" class="skill" target="_blank">JavaScript(view)</a>
+        <a href="react.html" class="skill" target="_blank">React(view)</a>
+        <a href="nodejs.html" class="skill" target="_blank">Node.js(view)</a>
+        <a href="mongodb.html" class="skill" target="_blank">MongoDB(view)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Accomplishments Section -->
+  <section id="accomplishments">
+    <div class="container">
+      <h2>Accomplishments</h2>
+      <ul class="accomplishments-list">
+        <li>
+          <strong>Linux Project Completion</strong> - Successfully built a To-Do-List and weather forecast application, demonstrating practical application of Linux skills.
+        </li>
+        <li>
+          <strong>Simpl!Learn Certification</strong> - Earned certification in a professional development course, validating my technical knowledge.
+        </li>
+        <li>
+          <strong>Great Learning Certification</strong> - Completed an advanced training program, expanding my expertise in key development areas.
+        </li>
+        <li>
+          <strong>First Web Application</strong> - Designed and deployed my first full-stack web application within three months of starting to learn programming.
+        </li>
+        <li>
+          <strong>Academic Excellence</strong> - Maintained a GPA of 3.8+ in my first year of Software Engineering studies.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project">
+          <a href="https://drive.google.com/file/d/1-BXL3nHrGSwbsKekJrjeG9Yb4Yybvwo_/view?usp=drivesdk" target="_blank" class="project1link">View Project-1</a>
+          <h3>Linux_Project</h3>
+          <p>Built a To-Do-List and a weather forecast app.</p>
+        </div>
+        <div class="project">
+          <a href="https://drive.google.com/file/d/1-u3KMMG8fJAOBgp2n6kRklVY1QEys7zU/view?usp=drivesdk" target="_blank">View Certificate-1</a>
+          <h3>Certification</h3>
+          <p>Certificate of completion from Simpl!Learn.</p>
+        </div>
+        <div class="project">
+          <a href="https://drive.google.com/file/d/1-vQxROaa2G7ZgAs0YCpWV5-EGqPO2suT/view?usp=drivesdk" target="_blank">View Certificate-2</a>
+          <h3>Certification</h3>
+          <p>Certificate of completion from Great-Learnings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Education Section -->
+  <section id="education">
+    <div class="container">
+      <h2>Education & Training</h2>
+      <div class="education-item">
+        <h3>MIT Academy of Engineering, Pune</h3>
+        <p class="date">2023 - Present</p>
+        <p>Bachelor of Technology in Software Engineering</p>
+        <p>Key Courses: Data Structures, Algorithms, Web Development, Database Systems</p>
+      </div>
+      <div class="education-item">
+        <h3>Simpl!Learn</h3>
+        <p class="date">2023</p>
+        <p>Certification in Full Stack Development</p>
+        <p>Covered HTML, CSS, JavaScript, React, Node.js, and MongoDB</p>
+      </div>
+      <div class="education-item">
+        <h3>Great Learning</h3>
+        <p class="date">2023</p>
+        <p>Advanced Programming Concepts</p>
+        <p>Focused on problem-solving, algorithms, and best practices</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline">
+    <div class="container">
+      <h2>Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-date">2023 - Present</div>
+          <div class="timeline-content">
+            <h3>Pursuing B.Tech in Software Engineering</h3>
+            <p>Currently studying at MIT-AOE, focusing on Full Stack Development and exploring new technologies.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3>Completed Higher Secondary Education</h3>
+            <p>Graduated from XYZ School with a focus on Science and Mathematics.</p>
+          </div>
+        </div>
+        <div class="timeline-item left">
+          <div class="timeline-date">2021</div>
+          <div class="timeline-content">
+            <h3>Started Learning Web Development</h3>
+            <p>Began my journey into web development with HTML, CSS, and JavaScript.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-date">2020</div>
+          <div class="timeline-content">
+            <h3>First Coding Experience</h3>
+            <p>Introduced to programming through Python and basic algorithms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <h2>Blog</h2>
+      
+      <article class="blog-post">
+        <h3>My Web Development Journey</h3>
+        <div class="blog-content fade-out">
+          <p>My journey into web development began with basic HTML and CSS. At first, I was fascinated by how simple code could create structured web pages. As I explored further, I realized that CSS brought design to life, and JavaScript added interactivity.</p>
+          <p>Over time, I moved on to frameworks like React for front-end development and Node.js for back-end work. I have built various projects, including a personal portfolio and a to-do app, which helped me solidify my understanding of the full stack ecosystem.</p>
+          <p>The transition from static websites to dynamic applications was challenging but rewarding. Learning about state management in React and API development with Express opened up new possibilities for creating interactive user experiences.</p>
+          <p>One of my biggest breakthroughs was understanding asynchronous JavaScript. Concepts like promises and async/await initially confused me, but through building real projects, I gradually mastered these essential concepts.</p>
+          <p>The learning process never stops, and I am excited to explore new technologies like TypeScript and GraphQL in the coming months.</p>
+        </div>
+        <button class="read-more-btn">Read More</button>
+      </article>
+      
+      <article class="blog-post">
+        <h3>Lessons from My Projects</h3>
+        <div class="blog-content fade-out">
+          <p>Working on different projects has been both challenging and rewarding. One of the biggest lessons I learned is that debugging is an essential skill. Initially, I found errors frustrating, but with time, I understood the importance of structured problem-solving.</p>
+          <p>Performance optimization is another crucial area. Writing efficient code and optimizing database queries can significantly improve application performance. I discovered this firsthand when my to-do app started slowing down with hundreds of tasks.</p>
+          <p>I also realized that working in teams is different from solo projects, requiring collaboration, version control, and code reviews. My first experience with Git merge conflicts was stressful but taught me the value of clear communication and regular commits.</p>
+          <p>Another valuable lesson was about user experience. What makes sense to me as a developer might not be intuitive for users. Conducting simple usability tests with friends revealed several areas for improvement in my projects.</p>
+          <p>These experiences have made me a better developer, and I look forward to applying my knowledge to even more complex projects. My next goal is to contribute to open-source projects to further enhance my skills.</p>
+        </div>
+        <button class="read-more-btn">Read More</button>
+      </article>
+      
+      <article class="blog-post">
+        <h3>Why I Chose Full Stack Development</h3>
+        <div class="blog-content fade-out">
+          <p>Many people ask me why I decided to pursue full stack development instead of specializing in front-end or back-end. The answer lies in my curiosity about how different parts of an application work together.</p>
+          <p>I enjoy the creative aspects of front-end development - seeing my designs come to life in the browser. But I'm equally fascinated by the logic and structure of back-end systems and databases.</p>
+          <p>Understanding the full stack gives me a comprehensive view of application architecture. This knowledge helps me make better decisions about where to implement specific features and how to optimize performance across the entire system.</p>
+          <p>While I acknowledge that specializing has its advantages, I believe that starting with full stack development provides a solid foundation. It allows me to understand the big picture before potentially specializing later in my career.</p>
+          <p>Moreover, as a student, exploring both sides helps me identify which aspects I'm most passionate about. So far, I find both equally exciting, which confirms that full stack development is the right path for me at this stage.</p>
+        </div>
+        <button class="read-more-btn">Read More</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <blockquote>
+          <p>"Sankalp is an exceptional developer with a keen eye for details. His work is always top-notch!"</p>
+          <cite>- Client Name- Am bani.</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          <p>"Working with Sankalp was a pleasure. He delivered the project ahead of schedule with excellent quality."</p>
+          <cite>- Project Manager, Trigo Company</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form id="contact-form" action="mailto:uploads1439@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+  
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="#" class="social-icon">LinkedIn</a>
+        <a href="#" class="social-icon">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <a href="#top" id="back-to-top" title="Go to top">↑</a>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Sankalp Dabhade. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Back to Top Button Logic
+    const backToTopButton = document.getElementById('back-to-top');
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) { // Show button after scrolling 300px
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    // Read More functionality
+    document.querySelectorAll('.read-more-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.previousElementSibling;
+        content.classList.toggle('expanded');
+        content.classList.toggle('fade-out');
+        
+        if (content.classList.contains('expanded')) {
+          button.textContent = 'Read Less';
+        } else {
+          button.textContent = 'Read More';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
