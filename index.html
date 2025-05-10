@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sankalp Dabhade - Portfolio</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Additional CSS for the Read More functionality */
@@ -80,16 +82,16 @@
       box-shadow: 0 0 15px rgba(255, 229, 180, 0.4);
     }
 
-    .download-btn:active {
-      transform: translateY(0);
-    }
-
-    .download-btn svg {
+    /* Icon styling */
+    i.fas, i.fab {
+      margin-right: 8px;
+      color: #FFE5B4;
       transition: transform 0.3s ease;
     }
 
-    .download-btn:hover svg {
-      transform: translateY(3px);
+    a:hover i.fas, 
+    a:hover i.fab {
+      transform: scale(1.1);
     }
 
     /* New styles for values section */
@@ -174,6 +176,39 @@
     .goal-category ul {
       padding-left: 20px;
     }
+
+    /* Testimonial quotes */
+    blockquote i.fa-quote-left {
+      color: rgba(255, 229, 180, 0.3);
+      font-size: 1.5rem;
+      margin-right: 10px;
+    }
+
+    /* Back to top button */
+    #back-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 229, 180, 0.2);
+      border: 2px solid #FFE5B4;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      color: #FFE5B4;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    #back-to-top.show {
+      display: block;
+    }
+
+    #back-to-top:hover {
+      background: rgba(255, 229, 180, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -181,18 +216,18 @@
   <nav>
     <div class="container">
       <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#nav">Resume</a></li>
-        <li><a href="#values">Values</a></li>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#accomplishments">Accomplishments</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#nav"><i class="fas fa-file-alt"></i> Resume</a></li>
+        <li><a href="#values"><i class="fas fa-heart"></i> Values</a></li>
+        <li><a href="#goals"><i class="fas fa-bullseye"></i> Goals</a></li>
+        <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#accomplishments"><i class="fas fa-trophy"></i> Accomplishments</a></li>
+        <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#timeline"><i class="fas fa-history"></i> Timeline</a></li>
+        <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#testimonials"><i class="fas fa-quote-right"></i> Testimonials</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -200,21 +235,20 @@
   <header>
     <div class="container">
       <h1>Sankalp Dabhade</h1>
-      <p>Full Stack Learner | Tech Enthusiast</p>
+      <p><i class="fas fa-laptop-code"></i> Full Stack Learner | Tech Enthusiast</p>
       <br>
-      <a href="resume.html" class="skill" target="_blank" id="nav">Resume</a>
-        
-       
+      <a href="resume.html" class="skill" target="_blank" id="nav">
+        <i class="fas fa-download"></i> Resume
       </a>
     </div>
   </header>
 
   <section id="about">
     <div class="container">
-      <h2>About Me</h2>
+      <h2><i class="fas fa-user"></i> About Me</h2>
       <div class="about-content">
         <img src="img_ani.img" alt="Sankalp Dabhade" class="anime-img">
-        <p>Hi, I'm <span class="neon">Sankalp Dabhade</span>, a first-year student pursuing Btech in Software Engineering at MIT-AOE. I'm passionate about Full Stack Development and love building web applications that solve real-world problems. I'm currently learning HTML, CSS, JavaScript, and exploring frameworks like React and Node.js. I've built a few small projects, like a personal portfolio website and a to-do list app, to practice my coding skills.</p>
+        <p><i class="fas fa-quote-left"></i> Hi, I'm <span class="neon">Sankalp Dabhade</span>, a first-year student pursuing Btech in Software Engineering at MIT-AOE. I'm passionate about Full Stack Development and love building web applications that solve real-world problems. I'm currently learning HTML, CSS, JavaScript, and exploring frameworks like React and Node.js. I've built a few small projects, like a personal portfolio website and a to-do list app, to practice my coding skills.</p>
         <p>My goal is to become a skilled Full Stack Developer and contribute to innovative projects. I'm also eager to collaborate with others and learn from experienced professionals. When I'm not coding, you'll find me diving into the latest tech trends. I believe in the power of continuous learning and collaboration, and I'm excited to contribute to meaningful projects that make a difference. Let's build something amazing together! Feel free to reach out if you'd like to collaborate or just chat about tech!</p>
       </div>
     </div>
@@ -223,22 +257,22 @@
   <!-- New Values Section -->
   <section id="values">
     <div class="container">
-      <h2>My Core Values</h2>
+      <h2><i class="fas fa-heart"></i> My Core Values</h2>
       <div class="values-grid">
         <div class="value-card">
-          <h3>Continuous Learning</h3>
+          <h3><i class="fas fa-book"></i> Continuous Learning</h3>
           <p>I believe in constantly expanding my knowledge and skills, staying curious about new technologies and approaches in the ever-evolving field of software development.</p>
         </div>
         <div class="value-card">
-          <h3>Integrity</h3>
+          <h3><i class="fas fa-handshake"></i> Integrity</h3>
           <p>Honesty and ethical behavior guide all my professional interactions. I take responsibility for my work and maintain transparency in all my projects.</p>
         </div>
         <div class="value-card">
-          <h3>Collaboration</h3>
+          <h3><i class="fas fa-users"></i> Collaboration</h3>
           <p>Great things are built together. I value teamwork, open communication, and the exchange of ideas that leads to innovative solutions.</p>
         </div>
         <div class="value-card">
-          <h3>Quality</h3>
+          <h3><i class="fas fa-star"></i> Quality</h3>
           <p>I strive for excellence in everything I create, paying attention to details while maintaining clean, efficient, and maintainable code.</p>
         </div>
       </div>
@@ -248,36 +282,36 @@
   <!-- New Personal Goals Section -->
   <section id="goals">
     <div class="container">
-      <h2>Personal Goals</h2>
+      <h2><i class="fas fa-bullseye"></i> Personal Goals</h2>
       <div class="goals-container">
         <div class="goal-category">
-          <h3>Short-term Goals (1 year)</h3>
+          <h3><i class="fas fa-flag"></i> Short-term Goals (1 year)</h3>
           <ul>
-            <li>Master React and Node.js frameworks</li>
-            <li>Build 5 substantial full-stack projects</li>
-            <li>Contribute to open-source projects</li>
-            <li>Complete 2 professional certifications</li>
-            <li>Develop a personal brand online</li>
+            <li><i class="fas fa-check-circle"></i> Master React and Node.js frameworks</li>
+            <li><i class="fas fa-check-circle"></i> Build 5 substantial full-stack projects</li>
+            <li><i class="fas fa-check-circle"></i> Contribute to open-source projects</li>
+            <li><i class="fas fa-check-circle"></i> Complete 2 professional certifications</li>
+            <li><i class="fas fa-check-circle"></i> Develop a personal brand online</li>
           </ul>
         </div>
         <div class="goal-category">
-          <h3>Medium-term Goals (2-3 years)</h3>
+          <h3><i class="fas fa-chart-line"></i> Medium-term Goals (2-3 years)</h3>
           <ul>
-            <li>Secure an internship at a tech company</li>
-            <li>Learn mobile app development</li>
-            <li>Develop expertise in cloud technologies</li>
-            <li>Build a professional network in the industry</li>
-            <li>Create a technical blog with regular posts</li>
+            <li><i class="fas fa-check-circle"></i> Secure an internship at a tech company</li>
+            <li><i class="fas fa-check-circle"></i> Learn mobile app development</li>
+            <li><i class="fas fa-check-circle"></i> Develop expertise in cloud technologies</li>
+            <li><i class="fas fa-check-circle"></i> Build a professional network in the industry</li>
+            <li><i class="fas fa-check-circle"></i> Create a technical blog with regular posts</li>
           </ul>
         </div>
         <div class="goal-category">
-          <h3>Long-term Goals (5+ years)</h3>
+          <h3><i class="fas fa-mountain"></i> Long-term Goals (5+ years)</h3>
           <ul>
-            <li>Work as a senior full-stack developer</li>
-            <li>Mentor junior developers</li>
-            <li>Launch a SaaS product</li>
-            <li>Speak at a tech conference</li>
-            <li>Establish a tech scholarship program</li>
+            <li><i class="fas fa-check-circle"></i> Work as a senior full-stack developer</li>
+            <li><i class="fas fa-check-circle"></i> Mentor junior developers</li>
+            <li><i class="fas fa-check-circle"></i> Launch a SaaS product</li>
+            <li><i class="fas fa-check-circle"></i> Speak at a tech conference</li>
+            <li><i class="fas fa-check-circle"></i> Establish a tech scholarship program</li>
           </ul>
         </div>
       </div>
@@ -286,14 +320,14 @@
 
   <section id="skills">
     <div class="container">
-      <h2>Skills</h2>
+      <h2><i class="fas fa-code"></i> Skills</h2>
       <div class="skills-grid">
-        <a href="html.html" class="skill" target="_blank">HTML(view)</a>
-        <a href="css.html" class="skill" target="_blank">CSS(view)</a>
-        <a href="javascript.html" class="skill" target="_blank">JavaScript(view)</a>
-        <a href="react.html" class="skill" target="_blank">React(view)</a>
-        <a href="nodejs.html" class="skill" target="_blank">Node.js(view)</a>
-        <a href="mongodb.html" class="skill" target="_blank">MongoDB(view)</a>
+        <a href="html.html" class="skill" target="_blank"><i class="fab fa-html5"></i> HTML(view)</a>
+        <a href="css.html" class="skill" target="_blank"><i class="fab fa-css3-alt"></i> CSS(view)</a>
+        <a href="javascript.html" class="skill" target="_blank"><i class="fab fa-js"></i> JavaScript(view)</a>
+        <a href="react.html" class="skill" target="_blank"><i class="fab fa-react"></i> React(view)</a>
+        <a href="nodejs.html" class="skill" target="_blank"><i class="fab fa-node-js"></i> Node.js(view)</a>
+        <a href="mongodb.html" class="skill" target="_blank"><i class="fas fa-database"></i> MongoDB(view)</a>
       </div>
     </div>
   </section>
@@ -301,19 +335,19 @@
   <!-- New Accomplishments Section -->
   <section id="accomplishments">
     <div class="container">
-      <h2>Accomplishments</h2>
+      <h2><i class="fas fa-trophy"></i> Accomplishments</h2>
       <ul class="accomplishments-list">
         <li>
-          <strong>Linux Project Completion</strong> - Successfully built a To-Do-List and weather forecast application, demonstrating practical application of Linux skills.
+          <i class="fas fa-check-circle"></i> <strong>Linux Project Completion</strong> - Successfully built a To-Do-List and weather forecast application, demonstrating practical application of Linux skills.
         </li>
         <li>
-          <strong>Simpl!Learn Certification</strong> - Earned certification in a professional development course, validating my technical knowledge.
+          <i class="fas fa-certificate"></i> <strong>Simpl!Learn Certification</strong> - Earned certification in a professional development course, validating my technical knowledge.
         </li>
         <li>
-          <strong>Great Learning Certification</strong> - Completed an advanced training program, expanding my expertise in key development areas.
+          <i class="fas fa-certificate"></i> <strong>Great Learning Certification</strong> - Completed an advanced training program, expanding my expertise in key development areas.
         </li>
         <li>
-          <strong>Personal Portfolio Website </strong> - Developed a personal portfolio website to showcase my projects and skills, enhancing my online presence. 
+          <i class="fas fa-laptop"></i> <strong>Personal Portfolio Website </strong> - Developed a personal portfolio website to showcase my projects and skills, enhancing my online presence. 
         </li>
       </ul>
     </div>
@@ -321,21 +355,27 @@
 
   <section id="projects">
     <div class="container">
-      <h2>Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
       <div class="project-grid">
         <div class="project">
-          <a href="https://drive.google.com/file/d/1-BXL3nHrGSwbsKekJrjeG9Yb4Yybvwo_/view?usp=drivesdk" target="_blank" class="project1link">View Project-1</a>
-          <h3>Linux_Project</h3>
+          <a href="https://drive.google.com/file/d/1-BXL3nHrGSwbsKekJrjeG9Yb4Yybvwo_/view?usp=drivesdk" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Project-1
+          </a>
+          <h3><i class="fab fa-linux"></i> Linux_Project</h3>
           <p>Built a To-Do-List and a weather forecast app.</p>
         </div>
         <div class="project">
-          <a href="https://drive.google.com/file/d/1-u3KMMG8fJAOBgp2n6kRklVY1QEys7zU/view?usp=drivesdk" target="_blank">View Certificate-1</a>
-          <h3>Certification</h3>
+          <a href="https://drive.google.com/file/d/1-u3KMMG8fJAOBgp2n6kRklVY1QEys7zU/view?usp=drivesdk" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate-1
+          </a>
+          <h3><i class="fas fa-certificate"></i> Certification</h3>
           <p>Certificate of completion from Simpl!Learn.</p>
         </div>
         <div class="project">
-          <a href="https://drive.google.com/file/d/1-vQxROaa2G7ZgAs0YCpWV5-EGqPO2suT/view?usp=drivesdk" target="_blank">View Certificate-2</a>
-          <h3>Certification</h3>
+          <a href="https://drive.google.com/file/d/1-vQxROaa2G7ZgAs0YCpWV5-EGqPO2suT/view?usp=drivesdk" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Certificate-2
+          </a>
+          <h3><i class="fas fa-certificate"></i> Certification</h3>
           <p>Certificate of completion from Great-Learnings.</p>
         </div>
       </div>
@@ -345,24 +385,24 @@
   <!-- Enhanced Education Section -->
   <section id="education">
     <div class="container">
-      <h2>Education & Training</h2>
+      <h2><i class="fas fa-graduation-cap"></i> Education & Training</h2>
       <div class="education-item">
-        <h3>MIT Academy of Engineering, Pune</h3>
-        <p class="date">2025 - Present</p>
-        <p>Bachelor of Technology in Software Engineering</p>
-        <p>Key Courses: Data Structures, Algorithms, Web Development, Database Systems</p>
+        <h3><i class="fas fa-university"></i> MIT Academy of Engineering, Pune</h3>
+        <p class="date"><i class="far fa-calendar-alt"></i> 2025 - Present</p>
+        <p><i class="fas fa-book-open"></i> Bachelor of Technology in Software Engineering</p>
+        <p><i class="fas fa-list"></i> Key Courses: Data Structures, Algorithms, Web Development, Database Systems</p>
       </div>
       <div class="education-item">
-        <h3>Simpl!Learn</h3>
-        <p class="date">2025</p>
-        <p>Certification in Full Stack Development</p>
-        <p>Covered HTML, CSS, JavaScript, React, Node.js, and MongoDB</p>
+        <h3><i class="fas fa-certificate"></i> Simpl!Learn</h3>
+        <p class="date"><i class="far fa-calendar-alt"></i> 2025</p>
+        <p><i class="fas fa-laptop-code"></i> Certification in Full Stack Development</p>
+        <p><i class="fas fa-code"></i> Covered HTML, CSS, JavaScript, React, Node.js, and MongoDB</p>
       </div>
       <div class="education-item">
-        <h3>Great Learning</h3>
-        <p class="date">2025</p>
-        <p>Advanced Programming Concepts</p>
-        <p>Focused on problem-solving, algorithms, and best practices</p>
+        <h3><i class="fas fa-certificate"></i> Great Learning</h3>
+        <p class="date"><i class="far fa-calendar-alt"></i> 2025</p>
+        <p><i class="fas fa-brain"></i> Advanced Programming Concepts</p>
+        <p><i class="fas fa-lightbulb"></i> Focused on problem-solving, algorithms, and best practices</p>
       </div>
     </div>
   </section>
@@ -370,33 +410,33 @@
   <!-- Timeline Section -->
   <section id="timeline">
     <div class="container">
-      <h2>Timeline</h2>
+      <h2><i class="fas fa-history"></i> Timeline</h2>
       <div class="timeline">
         <div class="timeline-item left">
-          <div class="timeline-date">2025 - Present</div>
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> 2025 - Present</div>
           <div class="timeline-content">
-            <h3>Pursuing B.Tech in Software Engineering</h3>
+            <h3><i class="fas fa-laptop-code"></i> Pursuing B.Tech in Software Engineering</h3>
             <p>Currently studying at MIT-AOE, focusing on Full Stack Development and exploring new technologies.</p>
           </div>
         </div>
         <div class="timeline-item right">
-          <div class="timeline-date">2024</div>
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> 2024</div>
           <div class="timeline-content">
-            <h3>Completed Higher Secondary Education</h3>
+            <h3><i class="fas fa-school"></i> Completed Higher Secondary Education</h3>
             <p>Graduated from Abhishekh Vidyalayam School with a focus on Science and Mathematics.</p>
           </div>
         </div>
         <div class="timeline-item left">
-          <div class="timeline-date">2023</div>
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> 2023</div>
           <div class="timeline-content">
-            <h3>Started Learning Web Development</h3>
+            <h3><i class="fas fa-code"></i> Started Learning Web Development</h3>
             <p>Began my journey into web development with HTML, CSS, and JavaScript.</p>
           </div>
         </div>
         <div class="timeline-item right">
-          <div class="timeline-date">2022</div>
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> 2022</div>
           <div class="timeline-content">
-            <h3>First Coding Experience</h3>
+            <h3><i class="fas fa-keyboard"></i> First Coding Experience</h3>
             <p>Introduced to programming through Python and basic algorithms.</p>
           </div>
         </div>
@@ -406,10 +446,10 @@
 
   <section id="blog">
     <div class="container">
-      <h2>Blog</h2>
+      <h2><i class="fas fa-blog"></i> Blog</h2>
       
       <article class="blog-post">
-        <h3>My Web Development Journey</h3>
+        <h3><i class="fas fa-laptop-code"></i> My Web Development Journey</h3>
         <div class="blog-content fade-out">
           <p>My journey into web development began with basic HTML and CSS. At first, I was fascinated by how simple code could create structured web pages. As I explored further, I realized that CSS brought design to life, and JavaScript added interactivity.</p>
           <p>Over time, I moved on to frameworks like React for front-end development and Node.js for back-end work. I have built various projects, including a personal portfolio and a to-do app, which helped me solidify my understanding of the full stack ecosystem.</p>
@@ -417,11 +457,11 @@
           <p>One of my biggest breakthroughs was understanding asynchronous JavaScript. Concepts like promises and async/await initially confused me, but through building real projects, I gradually mastered these essential concepts.</p>
           <p>The learning process never stops, and I am excited to explore new technologies like TypeScript and GraphQL in the coming months.</p>
         </div>
-        <button class="read-more-btn">Read More</button>
+        <button class="read-more-btn"><i class="fas fa-book-open"></i> Read More</button>
       </article>
       
       <article class="blog-post">
-        <h3>Lessons from My Projects</h3>
+        <h3><i class="fas fa-lightbulb"></i> Lessons from My Projects</h3>
         <div class="blog-content fade-out">
           <p>Working on different projects has been both challenging and rewarding. One of the biggest lessons I learned is that debugging is an essential skill. Initially, I found errors frustrating, but with time, I understood the importance of structured problem-solving.</p>
           <p>Performance optimization is another crucial area. Writing efficient code and optimizing database queries can significantly improve application performance. I discovered this firsthand when my to-do app started slowing down with hundreds of tasks.</p>
@@ -429,11 +469,11 @@
           <p>Another valuable lesson was about user experience. What makes sense to me as a developer might not be intuitive for users. Conducting simple usability tests with friends revealed several areas for improvement in my projects.</p>
           <p>These experiences have made me a better developer, and I look forward to applying my knowledge to even more complex projects. My next goal is to contribute to open-source projects to further enhance my skills.</p>
         </div>
-        <button class="read-more-btn">Read More</button>
+        <button class="read-more-btn"><i class="fas fa-book-open"></i> Read More</button>
       </article>
       
       <article class="blog-post">
-        <h3>Why I Chose Full Stack Development</h3>
+        <h3><i class="fas fa-question-circle"></i> Why I Chose Full Stack Development</h3>
         <div class="blog-content fade-out">
           <p>Many people ask me why I decided to pursue full stack development instead of specializing in front-end or back-end. The answer lies in my curiosity about how different parts of an application work together.</p>
           <p>I enjoy the creative aspects of front-end development - seeing my designs come to life in the browser. But I'm equally fascinated by the logic and structure of back-end systems and databases.</p>
@@ -441,24 +481,26 @@
           <p>While I acknowledge that specializing has its advantages, I believe that starting with full stack development provides a solid foundation. It allows me to understand the big picture before potentially specializing later in my career.</p>
           <p>Moreover, as a student, exploring both sides helps me identify which aspects I'm most passionate about. So far, I find both equally exciting, which confirms that full stack development is the right path for me at this stage.</p>
         </div>
-        <button class="read-more-btn">Read More</button>
+        <button class="read-more-btn"><i class="fas fa-book-open"></i> Read More</button>
       </article>
     </div>
   </section>
 
   <section id="testimonials">
     <div class="container">
-      <h2>Testimonials</h2>
+      <h2><i class="fas fa-quote-right"></i> Testimonials</h2>
       <div class="testimonial">
         <blockquote>
+          <i class="fas fa-quote-left"></i>
           <p>"Sankalp is an exceptional developer with a keen eye for details. His work is always top-notch!"</p>
-          <cite> Client- Nimbus Tech.</cite>
+          <cite><i class="fas fa-user-tie"></i> Client- Nimbus Tech.</cite>
         </blockquote>
       </div>
       <div class="testimonial">
         <blockquote>
+          <i class="fas fa-quote-left"></i>
           <p>"Working with Sankalp was a pleasure. He delivered the project ahead of schedule with excellent quality."</p>
-          <cite> Project Manager- Trigo.</cite>
+          <cite><i class="fas fa-user-tie"></i> Project Manager- Trigo.</cite>
         </blockquote>
       </div>
     </div>
@@ -466,32 +508,39 @@
 
   <section id="contact">
     <div class="container">
-      <h2>Contact Me</h2>
+      <h2><i class="fas fa-envelope"></i> Contact Me</h2>
       <form id="contact-form" action="mailto:uploads1439@gmail.com" method="post" enctype="text/plain">
-        <label for="name">Name:</label>
+        <label for="name"><i class="fas fa-user"></i> Name:</label>
         <input type="text" id="name" name="name" required>
   
-        <label for="email">Email:</label>
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
         <input type="email" id="email" name="email" required>
   
-        <label for="message">Message:</label>
+        <label for="message"><i class="fas fa-comment"></i> Message:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
   
-        <button type="submit">Send Message</button>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
       </form>
       <div class="social-links">
-        <a href="#" class="social-icon">LinkedIn</a>
-        <a href="#" class="social-icon">GitHub</a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/SankalpDabhade" class="social-icon"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:uploads1439@gmail.com" class="social-icon"><i class="fas fa-envelope"></i> Email</a>
       </div>
     </div>
   </section>
 
   <!-- Back to Top Button -->
-  <a href="#top" id="back-to-top" title="Go to top">↑</a>
+  <a href="#top" id="back-to-top" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 Sankalp Dabhade. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/SankalpDabhade"><i class="fab fa-github"></i></a>
+      </div>
     </div>
   </footer>
   
@@ -515,9 +564,9 @@
         content.classList.toggle('fade-out');
         
         if (content.classList.contains('expanded')) {
-          button.textContent = 'Read Less';
+          button.innerHTML = '<i class="fas fa-book-open"></i> Read Less';
         } else {
-          button.textContent = 'Read More';
+          button.innerHTML = '<i class="fas fa-book-open"></i> Read More';
         }
       });
     });

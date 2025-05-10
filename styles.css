@@ -630,3 +630,14 @@ footer {
   width: 20px;
   height: 20px;
 }
+/* Icon styling */
+i.fas, i.fab {
+  margin-right: 8px; /* Space between icon and text */
+  color: #FFE5B4; /* Match your theme */
+  transition: transform 0.3s ease;
+}
+
+a:hover i.fas, 
+a:hover i.fab {
+  transform: scale(1.1); /* Small animation on hover */
+}
